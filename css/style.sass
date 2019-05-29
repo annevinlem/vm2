@@ -1,0 +1,110 @@
+html, body
+  font-size: 16px
+  color: #323232
+  font-weight: 300
+  height: 100%
+  width: 100%
+  font-family: "roboto_condensed", sans-serif
+  position: relative
+  letter-spacing: 0.96px
+  line-height: 1
+  overflow-x: hidden
+  opacity: 1
+
+.clearfix:after
+  content: ""
+  display: table
+  clear: both
+
+
+.container
+  position: relative
+  min-height: 100%
+  padding-top: 100px
+  background: #F8D353
+  background: -webkit-linear-gradient(top left, #F8D353, #FF5C5A)
+  background: -moz-linear-gradient(top left, #F8D353, #FF5C5A)
+  background: linear-gradient(top left, #F8D353, #FF5C5A)
+  .add-task
+    width: 600px
+    height: 50px
+    margin: 0 auto 10px auto
+    box-sizing: border-box
+    padding: 0 10px 0 30px
+    background: #ffffff
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(#000, .06)
+    overflow: hidden
+    input[name="task_name"]
+      height: 50px
+      width: 450px
+      line-height: 50px
+      padding-left: 5px
+      border: 1px solid rgba(#000, .0)
+      border-radius: 10px
+      outline: none
+    #add-new-task
+      display: block
+      margin-top: 8px
+      float: right
+      height: 35px
+      line-height: 35px
+      width: 35px
+      text-align: center
+      cursor: pointer
+      border-radius: 10px
+      background: linear-gradient(0deg, #4fbc6b, #4FD065)
+      color: #fff
+  .block-container
+    width: 600px
+    height: 600px
+    margin: 0 auto
+    background: #ffffff
+    border-radius: 10px
+    box-shadow: 0 0 10px rgba(#000, .06)
+    .wrapper
+      padding: 0 20px
+    .header
+      padding: 60px 30px 10px 30px
+      margin-bottom: 10px
+      .title
+        font-size: 25px
+      .desc
+        font-size: 14px
+        color: rgba(#000, .6)
+    .items-list
+      .item
+        padding: 0 30px
+        height: 50px
+        line-height: 50px
+        border-bottom: 1px solid rgba(#000, .1)
+        cursor: pointer
+        transition: 0.1s all ease-in-out
+        .checkbox
+          float: left
+          margin-right: 15px
+          margin-top: 17px
+          width: 15px
+          height: 15px
+          border-radius: 3px
+          border: 1px solid rgba(#000, .2)
+        .name
+          display: block
+          float: left
+        .action-buttons
+          float: right
+          i
+            font-size: 14px
+            padding: 7px
+            border-radius: 10px
+            transition: 0.1s all ease-in-out
+            &#delete
+              color: tomato
+              &:hover
+                background: tomato
+                color: #fff
+        &:last-child
+          border-bottom: none
+        &:hover
+          background: rgba(#000, .03)
+
