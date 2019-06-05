@@ -1,61 +1,54 @@
 <?php
+    //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
+    session_start();
+    ?>
+    <html>
+    <head>
+    <title>Главная страница</title>
+    </head>
+    <body>
+    <h2>Главная страница</h2>
+    <form action="testreg.php" method="post">
 
-function printItem($item)
-{
-    $html = <<<HTML
-<div class="item clearfix">
-    <div class="checkbox"></div>
-    <h2 class="name">$item</h2>
-    <div class="action-buttons clearfix">
-        <i class="ti-close" id="delete"></i>
-    </div>
-</div>
-HTML;
+    <!--****  testreg.php - это адрес обработчика. То есть, после нажатия на кнопку  "Войти", данные из полей отправятся на страничку testreg.php методом  "post" ***** -->
+ <p>
+    <label>Ваш логин:<br></label>
+    <input name="login" type="text" size="15" maxlength="15">
+    </p>
 
-    echo $html;
-}
 
-?>
+    <!--**** В текстовое поле (name="login" type="text") пользователь вводит свой логин ***** -->
+ 
+    <p>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Список задач</title>
+    <label>Ваш пароль:<br></label>
+    <input name="password" type="password" size="15" maxlength="15">
+    </p>
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="fonts/roboto_c.css">
-    <link rel="stylesheet" href="fonts/themify-icons.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!--**** В поле для паролей (name="password" type="password") пользователь вводит свой пароль ***** --> 
 
-</head>
-<body>
+    <p>
+    <input type="submit" name="submit" value="Войти">
 
-<div class="container">
-    <div class="add-task clearfix">
-        <input type="text" name="task_name" placeholder="Добавить новую задачу"/>
-        <i class="ti-plus" id="add-new-task"></i>
-    </div>
-    <div class="block-container">
-        <div class="header">
-            <h1 class="title">Активные задачи</h1>
-            <span class="desc">Вы можете добавлять, удалять и редактировать задачи</span>
-        </div>
-        <div class="items-list">
-            <?php
-            $tasks = file("tasks.txt");
+    <!--**** Кнопочка (type="submit") отправляет данные на страничку testreg.php ***** --> 
+<br>
+ <!--**** ссылка на регистрацию, ведь как-то же должны гости туда попадать ***** --> 
+<a href="reg.php">Зарегистрироваться</a> 
+    </p></form>
+    <br>
+    <?php
+    // Проверяем, пусты ли переменные логина и id пользователя
+    if (empty($_SESSION['login']) or empty($_SESSION['id']))
+    {
+    // Если пусты, то мы не выводим ссылку
+    echo "Вы вошли на сайт, как гость<br><a href='#'>Эта ссылка  доступна только зарегистрированным пользователям</a>";
+    }
+    else
+    {
 
-            //Перебираем все элементы массива в цикле
-            foreach ($tasks as $task)
-            {
-                printItem($task);
-            }
-            ?>
-        </div>
-    </div>
-</div>
-
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/common.js"></script>
-</body>
-</html>
+    // Если не пусты, то мы выводим ссылку
+    echo "Вы вошли на сайт, как ".$_SESSION['login']."<br><a  href='todo.php'>Эта ссылка доступна только  зарегистрированным пользователям</a>";
+    }
+    ?>
+    </body>
+    </html>
