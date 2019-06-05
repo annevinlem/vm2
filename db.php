@@ -1,4 +1,4 @@
 <?php
-    $db = mysqli_connect ("localhost","root","","users");
+    $db = mysqli_connect ("localhost","root","","todo");
 	
     ?>

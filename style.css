@@ -7,6 +7,10 @@
 	border: 2px solid #6B8E23;
 	border-radius: 50px;
 }
+tbody td {
+	text-align: center;
+	
+}
 form {
 	width: 50%; 
 	margin: 30px auto; 
@@ -59,9 +63,6 @@ tr:hover {
 	background: #E9E9E9;
 }
 
-.task {
-	text-align: left;
-}
 
 .delete{
 	text-align: center;
