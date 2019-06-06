@@ -4,7 +4,7 @@
     ?>
     <html>
     <head>
-    <title>Главная страница</title>
+    <title>))))</title>
     </head>
     <body>
     <h2>Главная страница</h2>
