@@ -1,4 +1,3 @@
-﻿<<<<<<< HEAD
 ﻿<?php
 require_once("db.php");//бд//
     if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
@@ -34,3 +33,4 @@ require_once("db.php");//бд//
  else {
     echo "Ошибка! Вы не зарегистрированы.";
     }
+    ?>

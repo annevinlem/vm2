@@ -1,6 +1,6 @@
-﻿<?php 
-session_start();
-if (empty($_SESSION['login'])){
+<?php 
+//session_start();
+if (!empty($_SESSION['login'])){
 	header("location:index.php");
 	return false;
 }
@@ -17,7 +17,7 @@ if (empty($_SESSION['login'])){
 		}else{
 			$task = $_POST['task'];
 			$query = "INSERT INTO tasks (task) VALUES ('$task')";
-			mysqli_query($db, $query);
+			mysqli_query($db,$query);
 			header('location:todo.php');
 		}
 	}	
