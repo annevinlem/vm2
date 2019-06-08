@@ -1,5 +1,6 @@
+﻿<<<<<<< HEAD
 ﻿<?php
-require_once("db.php");
+require_once("db.php");//бд//
     if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
     if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
     //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
@@ -33,4 +34,3 @@ require_once("db.php");
  else {
     echo "Ошибка! Вы не зарегистрированы.";
     }
-    ?>

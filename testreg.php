@@ -1,4 +1,4 @@
-<?php
+﻿<?php
  require_once("db.php");
     session_start();//  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
 if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
@@ -17,8 +17,6 @@ $password = stripslashes($password);
     $login = trim($login);
     $password = trim($password);
 // подключаемся к базе
-
- 
 $result = mysqli_query($db,"SELECT * FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
     $myrow = mysqli_fetch_array($result);
     if (empty($myrow['password']))
