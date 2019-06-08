@@ -1,4 +1,11 @@
 <?php 
+session_start();
+if (empty($_SESSION['login'])){
+	header("location:index.php");
+	return false;
+}
+    else {
+		
 	 require_once("db.php");
 	$errors = "";
 
@@ -6,7 +13,7 @@
 	if (isset($_POST['submit'])) {
 
 		if (empty($_POST['task'])) {
-			$errors = "Введите цель";
+			$errors = "Введите цель:";
 		}else{
 			$task = $_POST['task'];
 			$query = "INSERT INTO tasks (task) VALUES ('$task')";
@@ -25,7 +32,7 @@
 
 	// select all tasks if page is visited or refreshed
 	$tasks = mysqli_query($db, "SELECT * FROM tasks");
-
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,7 +43,6 @@
 </head>
 
 <body>
-
 	<div class="heading">
 		<h2 style="font-style: 'Hervetica';">ToDo List </h2>
 	</div>
@@ -54,7 +60,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th>N</th>
+				<th>№</th>
 				<th>Tasks</th>
 				<th style="width: 60px;">Action</th>
 			</tr>

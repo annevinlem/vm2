@@ -1,8 +1,4 @@
-<?php
-    //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
-    session_start();
-    ?> 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <style>
@@ -135,15 +131,37 @@ body{background:url(/images/bg/bg-6.png)}
  }
 }
 </style>
+<?php
 
+if(@$_GET["error"] == 6)
+
+echo "Неверный логин";
+
+if(@$_GET["error"] == 5)
+
+echo "Неверный пароль";
+
+if(@$_GET["error"] == 2 )
+
+echo "Ошибка сервера";
+
+if(@$_GET["error"] == 1)
+
+echo "Введите логин!";
+
+if(@$_GET["error"] == 4)
+
+echo "Введите пароль";
+
+?>
 <div class="container">
  <div class="row">
 
  <div class="col-md-offset-3 col-md-6">
- <form action="testreg.php" method="POST" class="form-horizontal">
- <span class="heading">Авторизация</span>
+ <form  action="save_user.php" method="POST" class="form-horizontal">
+ <span class="heading">Регистрация</span>
  <div class="form-group">
- <input name="login" class="form-control" id="inputLogin" placeholder="Login">
+ <input name="login" class="form-control" id="inputEmail" placeholder="Login">
  <i class="fa fa-user"></i>
  </div>
  <div class="form-group help">
@@ -151,31 +169,8 @@ body{background:url(/images/bg/bg-6.png)}
  <i class="fa fa-lock"></i>
  <a href="#" class="fa fa-question-circle"></a>
  </div>
- <div class="form-group">
- <div class="main-checkbox">
- <input type="checkbox" value="none" id="checkbox1" name="check"/>
- <label for="checkbox1"></label>
- </div>
- <span class="text">Запомнить</span>
-<a href="registration.php">Зарегистрироваться</a> 
-    </p></form>
-    <br>
-	
-    <?php
-    // Проверяем, пусты ли переменные логина и id пользователя
-    if (empty($_SESSION['login']) or empty($_SESSION['id']))
-    {
-    // Если пусты, то мы не выводим ссылку
-    echo "Вы вошли на сайт, как гость<br><a href='#'>Эта ссылка  доступна только зарегистрированным пользователям</a>";
-    }
-    else
-    {
 
-    // Если не пусты, то мы выводим ссылку
-    echo "Вы вошли на сайт, как ".$_SESSION['login']."<br><a  href='todo.php'>Эта ссылка доступна только  зарегистрированным пользователям</a>";
-    }
-    ?>
- <button type="submit" class="btn btn-default">Вход</button>
+ <button type="submit" class="btn btn-default">Зарегистрироваться</button>
  </div>
  </form>
  </div>
