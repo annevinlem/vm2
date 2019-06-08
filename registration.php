@@ -137,7 +137,7 @@ body{background:url(/images/bg/bg-6.png)}
 
  <div class="col-md-offset-3 col-md-6">
  <form  action="save_user.php" method="POST" class="form-horizontal">
- <span class="heading">Регистрация</span>
+ <span class="heading">Регистрация </span>
  <div class="form-group">
  <input name="login" class="form-control" id="inputEmail" placeholder="Login">
  <i class="fa fa-user"></i>
