@@ -131,29 +131,7 @@ body{background:url(/images/bg/bg-6.png)}
  }
 }
 </style>
-<?php
 
-if(@$_GET["error"] == 6)
-
-echo "Неверный логин";
-
-if(@$_GET["error"] == 5)
-
-echo "Неверный пароль";
-
-if(@$_GET["error"] == 2 )
-
-echo "Ошибка сервера";
-
-if(@$_GET["error"] == 1)
-
-echo "Введите логин!";
-
-if(@$_GET["error"] == 4)
-
-echo "Введите пароль";
-
-?>
 <div class="container">
  <div class="row">
 

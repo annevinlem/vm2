@@ -161,7 +161,7 @@ body{background:url(/images/bg/bg-6.png)}
     </p></form>
     <br>
 	
-    <?php
+<?php
     // Проверяем, пусты ли переменные логина и id пользователя
     if (empty($_SESSION['login']) or empty($_SESSION['id']))
     {
