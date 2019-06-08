@@ -1,0 +1,74 @@
+.heading{
+	width: 50%;
+	margin: 30px auto;
+	text-align: center;
+	color: 	#ffff;
+	background: #00b4ef;
+	border: 2px solid #ffff;
+	border-radius: 50px;
+}
+tbody td {
+	text-align: center;
+	
+}
+form {
+	width: 50%; 
+	margin: 30px auto; 
+	border-radius: 5px; 
+	padding: 11px;
+	background: #00b4ef;
+	border: 1px solid #ffff;
+}
+form p {
+	color: #ffff;
+	margin: 0px;
+}
+.task_input {
+	width: 75%;
+	height: 15px; 
+	padding: 11px;
+	border: 2px solid ##7A7A7A;
+}
+.add_btn {
+	height: 39px;
+	background: #ffff;
+	color: 	#00b4ef;
+	border: 2px solid ##7A7A7A;
+	border-radius: 5px; 
+	padding: 5px 20px;
+}
+
+table {
+    width: 50%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+tr {
+	border-bottom: 1px solid #00b4ef;
+}
+
+th {
+	font-size: 19px;
+	color: #00b4ef;
+}
+
+th, td{
+	border: none;
+    height: 30px;
+    padding: 2px;
+}
+
+tr:hover {
+	background: #E9E9E9;
+}
+.delete{
+	text-align: center;
+}
+.delete a{
+	color: #ffff;
+	background: #00b4ef;
+	padding: 1px 6px;
+	border-radius: 2px;
+	text-decoration: none;
+}

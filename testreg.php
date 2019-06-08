@@ -17,8 +17,6 @@ $password = stripslashes($password);
     $login = trim($login);
     $password = trim($password);
 // подключаемся к базе
-
- 
 $result = mysqli_query($db,"SELECT * FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
     $myrow = mysqli_fetch_array($result);
     if (empty($myrow['password']))
